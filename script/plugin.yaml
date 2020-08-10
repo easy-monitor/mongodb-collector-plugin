@@ -1,0 +1,15 @@
+agentType: prometheus
+type: exporter
+
+name: mongodb_collector_plugin
+version: 1.0.0
+
+category: 数据库
+params:
+    - mongodb_host
+    - mongodb_port
+    - mongodb_user
+    - mongodb_password
+    - exporter_host
+    - exporter_port
+    - exporter_uri

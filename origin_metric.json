@@ -1,0 +1,157 @@
+[
+    {
+        "agentType": "prometheus",
+        "data_type": "double",
+        "help": "The network data structure contains data regarding MongoDB’s network use",
+        "key": "mongodb_network_bytes_total",
+        "metric_type": "counter",
+        "name": "mongodb_collector_plugin_mongodb_network_bytes_total",
+        "paramDefine": [
+            {
+                "default": "in_bytes",
+                "name": "state",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "in_bytes",
+                "name": "state",
+                "readOnly": false
+            }
+        ],
+        "unit": "bytes"
+    },
+    {
+        "agentType": "prometheus",
+        "data_type": "double",
+        "help": "The value of the uptime field corresponds to the number of seconds that the mongos or mongod process has been active.",
+        "key": "mongodb_instance_uptime_seconds",
+        "metric_type": "counter",
+        "name": "mongodb_collector_plugin_mongodb_instance_uptime_seconds",
+        "paramDefine": [],
+        "tagDefine": [],
+        "unit": "seconds"
+    },
+    {
+        "agentType": "prometheus",
+        "data_type": "double",
+        "help": "The document holds a document of that reflect document access and modification patterns and data use. Compare these values to the data in the opcounters document, which track total number of operations",
+        "key": "mongodb_mongod_metrics_document_total",
+        "metric_type": "counter",
+        "name": "mongodb_collector_plugin_mongodb_mongod_metrics_document_total",
+        "paramDefine": [
+            {
+                "default": "deleted",
+                "name": "state",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "deleted",
+                "name": "state",
+                "readOnly": false
+            }
+        ],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "data_type": "double",
+        "help": "The connections sub document data regarding the current status of incoming connections and availability of the database server. Use these values to assess the current load and capacity requirements of the server",
+        "key": "mongodb_connections",
+        "metric_type": "gauge",
+        "name": "mongodb_collector_plugin_mongodb_connections",
+        "paramDefine": [
+            {
+                "default": "available",
+                "name": "state",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "available",
+                "name": "state",
+                "readOnly": false
+            }
+        ],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "data_type": "double",
+        "help": "The mem data structure holds information regarding the target system architecture of mongod and current memory use",
+        "key": "mongodb_memory",
+        "metric_type": "gauge",
+        "name": "mongodb_collector_plugin_mongodb_memory",
+        "paramDefine": [
+            {
+                "default": "mapped",
+                "name": "type",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "mapped",
+                "name": "type",
+                "readOnly": false
+            }
+        ],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "data_type": "double",
+        "help": "queryExecutor is a document that reports data from the query execution system",
+        "key": "mongodb_mongod_metrics_query_executor_total",
+        "metric_type": "counter",
+        "name": "mongodb_collector_plugin_mongodb_mongod_metrics_query_executor_total",
+        "paramDefine": [
+            {
+                "default": "scanned",
+                "name": "state",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "scanned",
+                "name": "state",
+                "readOnly": false
+            }
+        ],
+        "unit": ""
+    },
+    {
+        "agentType": "prometheus",
+        "data_type": "double",
+        "help": "The opcounters data structure provides an overview of database operations by type and makes it possible to analyze the load on the database in more granular manner. These numbers will grow over time and in response to database use. Analyze these values over time to track database utilization",
+        "key": "mongodb_op_counters_total",
+        "metric_type": "counter",
+        "name": "mongodb_collector_plugin_mongodb_op_counters_total",
+        "paramDefine": [
+            {
+                "default": "command",
+                "name": "type",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "command",
+                "name": "type",
+                "readOnly": false
+            }
+        ],
+        "unit": ""
+    }
+]
