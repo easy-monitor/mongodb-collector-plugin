@@ -24,6 +24,31 @@
         "unit": "bytes"
     },
     {
+        "agentType": "calculated",
+        "data_type": "double",
+        "help": "The network data structure contains data regarding MongoDB’s network use",
+        "key": "mongodb_network_bytes_rate",
+        "metric_type": "gauge",
+        "name": "mongodb_collector_plugin_mongodb_network_bytes_rate",
+        "paramDefine": [
+            {
+                "default": "in_bytes",
+                "name": "state",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "in_bytes",
+                "name": "state",
+                "readOnly": false
+            }
+        ],
+        "unit": "bytes/min",
+        "expression": "rate(mongodb_network_bytes_total[5m])"
+    },
+    {
         "agentType": "prometheus",
         "data_type": "double",
         "help": "The value of the uptime field corresponds to the number of seconds that the mongos or mongod process has been active.",
@@ -57,6 +82,31 @@
             }
         ],
         "unit": ""
+    },
+    {
+        "agentType": "calculated",
+        "data_type": "double",
+        "help": "The document holds a document of that reflect document access and modification patterns and data use. Compare these values to the data in the opcounters document, which track total number of operations",
+        "key": "mongodb_mongod_metrics_document_rate",
+        "metric_type": "gauge",
+        "name": "mongodb_collector_plugin_mongodb_mongod_metrics_document_rate",
+        "paramDefine": [
+            {
+                "default": "deleted",
+                "name": "state",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "deleted",
+                "name": "state",
+                "readOnly": false
+            }
+        ],
+        "unit": "",
+        "expression": "rate(mongodb_mongod_metrics_document_total[5m])"
     },
     {
         "agentType": "prometheus",
@@ -131,6 +181,31 @@
         "unit": ""
     },
     {
+        "agentType": "calculated",
+        "data_type": "double",
+        "help": "queryExecutor is a document that reports data from the query execution system",
+        "key": "mongodb_mongod_metrics_query_executor_rate",
+        "metric_type": "gauge",
+        "name": "mongodb_collector_plugin_mongodb_mongod_metrics_query_executor_rate",
+        "paramDefine": [
+            {
+                "default": "scanned",
+                "name": "state",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "scanned",
+                "name": "state",
+                "readOnly": false
+            }
+        ],
+        "unit": "",
+        "expression": "rate(mongodb_mongod_metrics_query_executor_total[5m])"
+    },
+    {
         "agentType": "prometheus",
         "data_type": "double",
         "help": "The opcounters data structure provides an overview of database operations by type and makes it possible to analyze the load on the database in more granular manner. These numbers will grow over time and in response to database use. Analyze these values over time to track database utilization",
@@ -153,5 +228,30 @@
             }
         ],
         "unit": ""
+    },
+    {
+        "agentType": "calculated",
+        "data_type": "double",
+        "help": "The opcounters data structure provides an overview of database operations by type and makes it possible to analyze the load on the database in more granular manner. These numbers will grow over time and in response to database use. Analyze these values over time to track database utilization",
+        "key": "mongodb_op_counters_rate",
+        "metric_type": "gauge",
+        "name": "mongodb_collector_plugin_mongodb_op_counters_rate",
+        "paramDefine": [
+            {
+                "default": "command",
+                "name": "type",
+                "readOnly": false,
+                "valueType": "string"
+            }
+        ],
+        "tagDefine": [
+            {
+                "default": "command",
+                "name": "type",
+                "readOnly": false
+            }
+        ],
+        "unit": "",
+        "expression": "rate(mongodb_op_counters_total[5m])"
     }
 ]
