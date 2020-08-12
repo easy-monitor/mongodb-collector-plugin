@@ -6,7 +6,7 @@
         "namespace": "resource-monitor._MONGODB_INSTANCE",
         "panels": [
             {
-                "brickConf": "{\"brick\":\"general-charts.statistic-card\",\"properties\":{\"showCard\":false,\"format\":{\"unit\":\"s\"},\"icon\":{\"lib\":\"antd\",\"icon\":\"clock-circle\"}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-select\",\"args\":[{\"model\":\"easyops._MONGODB_INSTANCE\",\"statements\":[{\"name\":\"mongodb_instance_uptime_seconds\",\"alias\":\"mongodb_instance_uptime_seconds\"}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"now-5m\"},{\"name\":\"mongodb_instance_uptime_seconds\",\"operator\":\"!=\",\"value\":null}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}],\"limit\":{\"limit\":1}}],\"transform\":{\"value\":\"<% _.get(DATA.list, \\\"[0].mongodb_instance_uptime_seconds\\\") %>\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "brickConf": "{\"brick\":\"general-charts.statistic-card\",\"properties\":{\"showCard\":false,\"format\":{\"unit\":\"s\"},\"icon\":{\"lib\":\"antd\",\"icon\":\"clock-circle\"}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-select\",\"args\":[{\"model\":\"<% \\\"easyops.\\\" + PARAMS.get(\\\"objectId\\\") %>\",\"statements\":[{\"name\":\"mongodb_instance_uptime_seconds\",\"alias\":\"mongodb_instance_uptime_seconds\"}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"now-5m\"},{\"name\":\"mongodb_instance_uptime_seconds\",\"operator\":\"!=\",\"value\":null}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}],\"limit\":{\"limit\":1}}],\"transform\":{\"value\":\"<% _.get(DATA.list, \\\"[0].mongodb_instance_uptime_seconds\\\") %>\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
                 "height": 5,
                 "id": "general-charts.statistic-card",
                 "links": "[]",
@@ -17,7 +17,7 @@
                 "y": 0
             },
             {
-                "brickConf": "{\"brick\":\"general-charts.statistic-card\",\"properties\":{\"showCard\":false,\"format\":{\"type\":\"none\",\"precision\":0},\"icon\":{\"lib\":\"antd\",\"icon\":\"link\"}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-select\",\"args\":[{\"model\":\"easyops._MONGODB_INSTANCE\",\"statements\":[{\"name\":\"mongodb_connections\",\"alias\":\"mongodb_connections\"}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"state\",\"operator\":\"==\",\"value\":\"current\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"now-5m\"},{\"name\":\"mongodb_connections\",\"operator\":\"!=\",\"value\":null}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}],\"limit\":{\"limit\":1}}],\"transform\":{\"value\":\"<% _.get(DATA.list, \\\"[0].mongodb_connections\\\") %>\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "brickConf": "{\"brick\":\"general-charts.statistic-card\",\"properties\":{\"showCard\":false,\"format\":{\"type\":\"none\",\"precision\":0},\"icon\":{\"lib\":\"antd\",\"icon\":\"link\"}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-select\",\"args\":[{\"model\":\"<% \\\"easyops.\\\" + PARAMS.get(\\\"objectId\\\") %>\",\"statements\":[{\"name\":\"mongodb_connections\",\"alias\":\"mongodb_connections\"}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"state\",\"operator\":\"==\",\"value\":\"current\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"now-5m\"},{\"name\":\"mongodb_connections\",\"operator\":\"!=\",\"value\":null}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}],\"limit\":{\"limit\":1}}],\"transform\":{\"value\":\"<% _.get(DATA.list, \\\"[0].mongodb_connections\\\") %>\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
                 "height": 5,
                 "id": "general-charts.statistic-card",
                 "links": "[]",
@@ -28,7 +28,7 @@
                 "y": 0
             },
             {
-                "brickConf": "{\"brick\":\"general-charts.statistic-card\",\"properties\":{\"showCard\":false,\"format\":{\"type\":\"none\",\"precision\":0},\"icon\":{\"lib\":\"fa\",\"icon\":\"link\"}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-select\",\"args\":[{\"model\":\"easyops._MONGODB_INSTANCE\",\"statements\":[{\"name\":\"mongodb_connections\",\"alias\":\"mongodb_connections\"}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"state\",\"operator\":\"==\",\"value\":\"available\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"now-5m\"},{\"name\":\"mongodb_connections\",\"operator\":\"!=\",\"value\":null}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}],\"limit\":{\"limit\":1}}],\"transform\":{\"value\":\"<% _.get(DATA.list, \\\"[0].mongodb_connections\\\") %>\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "brickConf": "{\"brick\":\"general-charts.statistic-card\",\"properties\":{\"showCard\":false,\"format\":{\"type\":\"none\",\"precision\":0},\"icon\":{\"lib\":\"fa\",\"icon\":\"link\"}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-select\",\"args\":[{\"model\":\"<% \\\"easyops.\\\" + PARAMS.get(\\\"objectId\\\") %>\",\"statements\":[{\"name\":\"mongodb_connections\",\"alias\":\"mongodb_connections\"}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"state\",\"operator\":\"==\",\"value\":\"available\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"now-5m\"},{\"name\":\"mongodb_connections\",\"operator\":\"!=\",\"value\":null}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}],\"limit\":{\"limit\":1}}],\"transform\":{\"value\":\"<% _.get(DATA.list, \\\"[0].mongodb_connections\\\") %>\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
                 "height": 5,
                 "id": "general-charts.statistic-card",
                 "links": "[]",
@@ -39,56 +39,97 @@
                 "y": 0
             },
             {
-                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":300,\"xField\":\"time\",\"yFields\":[\"mongodb_op_counters_total\"],\"groupField\":\"type\",\"axis\":{\"yAxis\":{\"min\":0}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._MONGODB_INSTANCE\",\"dims\":[\"type\",\"time(1m)\"],\"measures\":[{\"name\":\"mongodb_op_counters_total\",\"function\":{\"expression\":\"avg\",\"args\":[\"mongodb_op_counters_total\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"type\",\"operator\":\"in\",\"value\":[\"query\",\"insert\",\"update\",\"delete\"]},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"},{\"name\":\"type\",\"operator\":\"!=\",\"value\":null}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":300,\"xField\":\"time\",\"yFields\":[\"mongodb_op_counters_total\"],\"groupField\":\"type\",\"axis\":{\"yAxis\":{\"min\":0}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"<% \\\"easyops.\\\" + PARAMS.get(\\\"objectId\\\") %>\",\"dims\":[\"type\",\"time(1m)\"],\"measures\":[{\"name\":\"mongodb_op_counters_total\",\"function\":{\"expression\":\"avg\",\"args\":[\"mongodb_op_counters_total\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"type\",\"operator\":\"in\",\"value\":[\"query\",\"insert\",\"update\",\"delete\"]},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"},{\"name\":\"type\",\"operator\":\"!=\",\"value\":null}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
                 "height": 10,
                 "id": "general-charts.statistic-card",
                 "links": "[]",
                 "source": "brick",
                 "title": "SQL 语句",
-                "width": 24,
+                "width": 12,
                 "x": 0,
                 "y": 5
             },
             {
-                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":300,\"xField\":\"time\",\"yFields\":[\"mongodb_mongod_metrics_document_total\"],\"groupField\":\"state\",\"axis\":{\"yAxis\":{\"min\":0}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._MONGODB_INSTANCE\",\"dims\":[\"state\",\"time(1m)\"],\"measures\":[{\"name\":\"mongodb_mongod_metrics_document_total\",\"function\":{\"expression\":\"avg\",\"args\":[\"mongodb_mongod_metrics_document_total\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"state\",\"operator\":\"in\",\"value\":[\"deleted\",\"inserted\",\"returned\",\"updated\"]},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":300,\"xField\":\"time\",\"yFields\":[\"mongodb_op_counters_rate\"],\"axis\":{\"yAxis\":{\"min\":0}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"<% \\\"easyops.\\\" + PARAMS.get(\\\"objectId\\\") %>\",\"dims\":[\"time(5m)\"],\"measures\":[{\"name\":\"mongodb_op_counters_rate\",\"function\":{\"expression\":\"avg\",\"args\":[\"mongodb_op_counters_rate\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "height": 10,
+                "id": "general-charts.statistic-card",
+                "links": "[]",
+                "source": "brick",
+                "title": "SQL 执行速率",
+                "width": 12,
+                "x": 12,
+                "y": 5
+            },
+            {
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":300,\"xField\":\"time\",\"yFields\":[\"mongodb_mongod_metrics_document_total\"],\"groupField\":\"state\",\"axis\":{\"yAxis\":{\"min\":0}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"<% \\\"easyops.\\\" + PARAMS.get(\\\"objectId\\\") %>\",\"dims\":[\"state\",\"time(1m)\"],\"measures\":[{\"name\":\"mongodb_mongod_metrics_document_total\",\"function\":{\"expression\":\"avg\",\"args\":[\"mongodb_mongod_metrics_document_total\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"state\",\"operator\":\"in\",\"value\":[\"deleted\",\"inserted\",\"returned\",\"updated\"]},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
                 "height": 10,
                 "id": "general-charts.statistic-card",
                 "links": "[]",
                 "source": "brick",
                 "title": "文件操作",
-                "width": 24,
+                "width": 12,
                 "x": 0,
                 "y": 15
             },
             {
-                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"xField\":\"time\",\"yFields\":[\"mongodb_memory\"],\"groupField\":\"type\",\"axis\":{\"yAxis\":{\"min\":0,\"precision\":2,\"unit\":\"megabytes\"}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._MONGODB_INSTANCE\",\"dims\":[\"type\",\"time(1m)\"],\"measures\":[{\"name\":\"mongodb_memory\",\"function\":{\"expression\":\"avg\",\"args\":[\"mongodb_memory\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"type\",\"operator\":\"in\",\"value\":[\"mapped\",\"mapped_with_journal\",\"resident\",\"virtual\"]},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"},{\"name\":\"type\",\"operator\":\"!=\",\"value\":null}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":300,\"xField\":\"time\",\"yFields\":[\"mongodb_mongod_metrics_document_rate\"],\"axis\":{\"yAxis\":{\"min\":0}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"<% \\\"easyops.\\\" + PARAMS.get(\\\"objectId\\\") %>\",\"dims\":[\"time(5m)\"],\"measures\":[{\"name\":\"mongodb_mongod_metrics_document_rate\",\"function\":{\"expression\":\"avg\",\"args\":[\"mongodb_mongod_metrics_document_rate\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "height": 10,
+                "id": "general-charts.statistic-card",
+                "links": "[]",
+                "source": "brick",
+                "title": "文件操作速率",
+                "width": 12,
+                "x": 12,
+                "y": 15
+            },
+            {
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"xField\":\"time\",\"yFields\":[\"mongodb_memory\"],\"groupField\":\"type\",\"axis\":{\"yAxis\":{\"min\":0,\"precision\":2,\"unit\":\"megabytes\"}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"<% \\\"easyops.\\\" + PARAMS.get(\\\"objectId\\\") %>\",\"dims\":[\"type\",\"time(1m)\"],\"measures\":[{\"name\":\"mongodb_memory\",\"function\":{\"expression\":\"avg\",\"args\":[\"mongodb_memory\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"type\",\"operator\":\"in\",\"value\":[\"mapped\",\"mapped_with_journal\",\"resident\",\"virtual\"]},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"},{\"name\":\"type\",\"operator\":\"!=\",\"value\":null}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
                 "height": 8,
                 "id": "general-charts.statistic-card",
                 "links": "[]",
                 "source": "brick",
                 "title": "内存占用",
-                "width": 12,
+                "width": 24,
                 "x": 0,
                 "y": 25
             },
             {
-                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"xField\":\"time\",\"yFields\":[\"mongodb_network_bytes_total\"],\"groupField\":\"state\",\"axis\":{\"yAxis\":{\"min\":0,\"precision\":2,\"unit\":\"bytes\"}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"easyops._MONGODB_INSTANCE\",\"dims\":[\"state\",\"time(1m)\"],\"measures\":[{\"name\":\"mongodb_network_bytes_total\",\"function\":{\"expression\":\"avg\",\"args\":[\"mongodb_network_bytes_total\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"state\",\"operator\":\"in\",\"value\":[\"inbytes\",\"out_bytes\"]},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"},{\"name\":\"state\",\"operator\":\"!=\",\"value\":null}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"}}]}}",
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"xField\":\"time\",\"yFields\":[\"mongodb_network_bytes_rate\"],\"axis\":{\"yAxis\":{\"min\":0,\"precision\":2,\"unit\":\"bytes/min\"}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"<% \\\"easyops.\\\" + PARAMS.get(\\\"objectId\\\") %>\",\"dims\":[\"time(5m)\"],\"measures\":[{\"name\":\"mongodb_network_bytes_rate\",\"function\":{\"expression\":\"avg\",\"args\":[\"mongodb_network_bytes_rate\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
+                "height": 8,
+                "id": "general-charts.statistic-card",
+                "links": "[]",
+                "source": "brick",
+                "title": "网络速率",
+                "width": 12,
+                "x": 12,
+                "y": 33
+            },
+            {
+                "brickConf": "{\"brick\":\"chart-v2.time-series-chart\",\"properties\":{\"height\":230,\"xField\":\"time\",\"yFields\":[\"mongodb_network_bytes_total\"],\"groupField\":\"state\",\"axis\":{\"yAxis\":{\"min\":0,\"precision\":2,\"unit\":\"bytes/min\"}}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-query\",\"args\":[{\"model\":\"<% \\\"easyops.\\\" + PARAMS.get(\\\"objectId\\\") %>\",\"dims\":[\"state\",\"time(1m)\"],\"measures\":[{\"name\":\"mongodb_network_bytes_total\",\"function\":{\"expression\":\"avg\",\"args\":[\"mongodb_network_bytes_total\"]}}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"state\",\"operator\":\"in\",\"value\":[\"inbytes\",\"out_bytes\"]},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"${QUERY.from=\\\"now-1h\\\"|string}\"},{\"name\":\"time\",\"operator\":\"<=\",\"value\":\"<% parseInt(+moment() / 1000) %>\"},{\"name\":\"state\",\"operator\":\"!=\",\"value\":null}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}]}],\"transform\":{\"data\":\"@{list}\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
                 "height": 8,
                 "id": "general-charts.statistic-card",
                 "links": "[]",
                 "source": "brick",
                 "title": "网络流量",
                 "width": 12,
-                "x": 12,
-                "y": 25
+                "x": 0,
+                "y": 33
             }
         ],
         "variables": [
             {
+                "id": "objectId",
+                "multiSelect": false,
+                "name": "模型 ID",
+                "selectorDefaultValue": "_MONGODB_INSTANCE",
+                "showSelector": false,
+                "type": "cmdb-model"
+            },
+            {
                 "id": "instanceId",
                 "multiSelect": false,
                 "name": "实例 ID",
-                "selectorDefaultValue": "5ab681bc6d96a",
+                "selectorDefaultValue": "",
                 "selectorObjectId": "_MONGODB_INSTANCE",
                 "selectorQuery": "{}",
                 "showSelector": false,
