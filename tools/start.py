@@ -33,5 +33,5 @@ if __name__ == '__main__':
         if env_value is not None:
             arguments.append('{} {}'.format(argument, env_value))
     
-    command = 'nohup sh ./deploy/start_script.sh {} > /dev/null 2>&1 &'.format(' '.join(arguments))
+    command = 'sh ./deploy/start_script.sh {}'.format(' '.join(arguments))
     run_command(command, shell=True)
