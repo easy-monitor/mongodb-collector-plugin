@@ -1,3 +1,10 @@
 #!/bin/bash
 
-ps -ef | grep mongodb_exporter | awk '{print $2}' | xargs kill -9
+if [ ! -f exporter.pid ]; then
+    echo "The MongoDB exporter is not started."
+    exit 0
+fi
+
+kill -9 $(cat exporter.pid)
+
+rm -rf exporter.pid

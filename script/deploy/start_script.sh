@@ -133,6 +133,13 @@ do
     esac
 done
 
+if [ -f exporter.pid ]; then
+    echo "The MongoDB exporter has already started."
+    exit 0
+fi
+
 chmod +x ./src/mongodb_exporter
 
-MONGODB_URI="mongodb://$mongodb_user:$mongodb_password@$mongodb_host:$mongodb_port" ./src/mongodb_exporter --web.listen-address=$exporter_host:$exporter_port --web.telemetry-path=$exporter_uri
+MONGODB_URI="mongodb://$mongodb_user:$mongodb_password@$mongodb_host:$mongodb_port" ./src/mongodb_exporter --web.listen-address=$exporter_host:$exporter_port --web.telemetry-path=$exporter_uri &
+
+echo $! > exporter.pid
