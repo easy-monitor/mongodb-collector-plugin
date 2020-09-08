@@ -15,23 +15,27 @@ port_guard: none
 start_script: |
   #!/usr/local/easyops/python/bin/python
   # -*- coding: UTF-8 -*-
-
+  
+  import copy
   import os
   import subprocess
-
-
-  def run_command(command, env={}, shell=False, close_fds=True):
+  
+  
+  def run_command(command, cwd=".", env={}, shell=False, close_fds=True):
       process = subprocess.Popen(
           command,
-          env=env,
+          cwd=cwd,
+          env=copy.deepcopy(os.environ).update(env),
           shell=shell,
           close_fds=close_fds
       )
-
+  
       return process.returncode
-
-
+  
+  
   if __name__ == '__main__':
+      package_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+  
       argument_map = {
           '--mongodb-host': 'mongodb_host',
           '--mongodb-port': 'mongodb_port',
@@ -48,38 +52,14 @@ start_script: |
           if env_value is not None:
               arguments.append('{} {}'.format(argument, env_value))
       
-      command = 'nohup sh ./deploy/start_script.sh {} > /dev/null 2>&1 &'.format(' '.join(arguments))
-      run_command(command, shell=True)
+      command = 'sh ./script/deploy/start_script.sh {} &'.format(' '.join(arguments))
+      run_command(command, shell=True, cwd=package_path)
 start_script_type: python
 user_pre_check_script: ""
 user_pre_check_script_type: shell
 user_check_script: ""
 user_check_script_type: shell
-stop_script: |
-  #!/usr/local/easyops/python/bin/python
-  # -*- coding: UTF-8 -*-
-
-  import os
-  import subprocess
-
-
-  def run_command(command, shell=False, close_fds=True):
-      process = subprocess.Popen(
-          command,
-          shell=shell,
-          close_fds=close_fds,
-          stdout=subprocess.PIPE,
-          stderr=subprocess.PIPE,
-      )
-      process.wait()
-      output, err = process.communicate()
-
-      result = err or output
-      return process.returncode, result
-
-
-  if __name__ == "__main__":
-      run_command('sh ./deploy/stop_script.sh', True)
+stop_script: "" 
 stop_script_type: python
 monitor_script: ""
 user: root
