@@ -1,9 +1,8 @@
 [
     {
         "_object_id": "_DASHBOARD",
-        "instanceId": "5ab8ffa33024b",
-        "name": "MongoDB 实例监控",
         "namespace": "resource-monitor._MONGODB_INSTANCE",
+        "name": "MongoDB 实例监控",
         "panels": [
             {
                 "brickConf": "{\"brick\":\"general-charts.statistic-card\",\"properties\":{\"showCard\":false,\"format\":{\"unit\":\"s\"},\"icon\":{\"lib\":\"antd\",\"icon\":\"clock-circle\"}},\"lifeCycle\":{\"useResolves\":[{\"provider\":\"providers-of-data-exchange.olap-api-select\",\"args\":[{\"model\":\"<% \\\"easyops.\\\" + PARAMS.get(\\\"objectId\\\") %>\",\"statements\":[{\"name\":\"mongodb_instance_uptime_seconds\",\"alias\":\"mongodb_instance_uptime_seconds\"}],\"filters\":[{\"name\":\"instanceId\",\"operator\":\"==\",\"value\":\"${QUERY.instanceId|string}\"},{\"name\":\"time\",\"operator\":\">=\",\"value\":\"now-5m\"},{\"name\":\"mongodb_instance_uptime_seconds\",\"operator\":\"!=\",\"value\":null}],\"order\":[{\"name\":\"time\",\"order\":\"desc\"}],\"limit\":{\"limit\":1}}],\"transform\":{\"value\":\"<% _.get(DATA.list, \\\"[0].mongodb_instance_uptime_seconds\\\") %>\"},\"onReject\":{\"transform\":{\"error\":\"<% DATA.message || '接口请求错误' %>\"}}}]}}",
