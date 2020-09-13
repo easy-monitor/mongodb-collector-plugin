@@ -139,7 +139,7 @@ do
             echo "[ERROR] Message: $message" >& 2
             echo "$(date "+%Y-%m-%d %H:%M:%S") [ERROR] Message: $message" > $LOG_FILE
             print_help
-            exi
+            exit 1
             ;;
     esac
 done
